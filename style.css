@@ -1,0 +1,250 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: radial-gradient(ellipse at center, #282e47 0%, #11192e 70%);
+    color: #e8ecf4;
+    font-family: Arial, sans-serif;
+    padding: 40px 20px 80px;
+}
+
+/* ─── Header ────────────────────────────── */
+.header {
+    text-align: center;
+    margin-bottom: 36px;
+}
+
+.badge {
+    display: inline-block;
+    border: 1px solid #252d45;
+    border-radius: 999px;
+    padding: 5px 16px;
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    color: #6c8dff;
+    margin-bottom: 18px;
+}
+
+.header h1 {
+  font-size: 64px;
+  font-weight: bold;
+  color: #c8c0e8;
+  line-height: 1.1;
+  margin-bottom: 12px;
+}
+
+.header p {
+    color: #7a83a0;
+    font-size: 15px;
+}
+
+/* ─── Card ──────────────────────────────── */
+.card {
+    background-color: #151a28;
+    border: 1px solid #252d45;
+    border-radius: 16px;
+    padding: 36px;
+    max-width: 800px;
+    margin: 0 auto 24px;
+}
+
+/* ─── Section Label ─────────────────────── */
+.section-label {
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #6c8dff;
+    margin-bottom: 18px;
+    margin-top: 28px;
+}
+
+.section-label:first-child {
+    margin-top: 0;
+}
+
+/* ─── Grids ─────────────────────────────── */
+.grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+.grid-3 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 16px;
+}
+
+/* ─── Field ─────────────────────────────── */
+.field {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.field label {
+    font-size: 13px;
+    color: #7a83a0;
+}
+
+.field input,
+.field select {
+    background-color: #1c2236;
+    border: 1px solid #252d45;
+    border-radius: 10px;
+    padding: 11px 14px;
+    font-size: 14px;
+    color: #e8ecf4;
+    outline: none;
+    font-family: Arial, sans-serif;
+}
+
+.field input:focus,
+.field select:focus {
+    border-color: #6c8dff;
+}
+
+.field select option {
+    background-color: #1c2236;
+}
+
+/* ─── Slider ────────────────────────────── */
+.slider-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.slider-row input[type="range"] {
+    flex: 1;
+    accent-color: #6c8dff;
+    cursor: pointer;
+    border: none;
+    background: none;
+    padding: 0;
+}
+
+.slider-value {
+    font-size: 13px;
+    color: #6c8dff;
+    min-width: 40px;
+    text-align: right;
+}
+
+/* ─── Divider ───────────────────────────── */
+.divider {
+    border: none;
+    border-top: 1px solid #252d45;
+    margin: 28px 0;
+}
+
+/* ─── Skill Grid ────────────────────────── */
+.skill-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 12px;
+}
+
+.skill-col {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.skill-col-label {
+  font-size: 12px;
+  color: #7a83a0;
+  margin-bottom: 4px;
+  text-align: center;
+}
+
+.skill-pill {
+  width: 100%;
+  padding: 8px 4px;
+  border-radius: 8px;
+  border: 1px solid #252d45;
+  background: #1c2236;
+  color: #7a83a0;
+  font-size: 13px;
+  cursor: pointer;
+  font-family: Arial, sans-serif;
+}
+
+.skill-pill:hover {
+  border-color: #6c8dff;
+  color: #e8ecf4;
+}
+
+/* Active state colors per level */
+.skill-pill.active-poor        { border-color: #f87171; color: #f87171; background: rgba(248,113,113,0.1); }
+.skill-pill.active-average     { border-color: #fb923c; color: #fb923c; background: rgba(251,146,60,0.1);  }
+.skill-pill.active-good        { border-color: #6c8dff; color: #6c8dff; background: rgba(108,141,255,0.1);}
+.skill-pill.active-outstanding { border-color: #34d399; color: #34d399; background: rgba(52,211,153,0.1); }
+
+/* ─── Submit Button ─────────────────────── */
+.submit-btn {
+    width: 100%;
+    padding: 14px;
+    margin-top: 28px;
+    background: linear-gradient(135deg, #6c8dff, #a78bfa);
+    border: none;
+    border-radius: 10px;
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    font-family: Arial, sans-serif;
+}
+
+.submit-btn:hover {
+    opacity: 0.9;
+}
+
+/* ─── Result Card ───────────────────────── */
+.result-card {
+    background-color: #151a28;
+    border: 1px solid #252d45;
+    border-radius: 16px;
+    padding: 36px;
+    max-width: 800px;
+    margin: 0 auto;
+    display: none;
+}
+
+.result-card h2 {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #e8ecf4;
+}
+
+.result-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 0;
+    border-bottom: 1px solid #252d45;
+    font-size: 14px;
+}
+
+.result-row:last-child {
+    border-bottom: none;
+}
+
+.result-row .label {
+    color: #7a83a0;
+}
+
+.result-row .value {
+    color: #a78bfa;
+    font-weight: bold;
+}
+
+.waiting-text {
+    color: #7a83a0;
+    font-size: 14px;
+    text-align: center;
+    padding: 20px 0;
+}
