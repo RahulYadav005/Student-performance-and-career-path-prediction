@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Student Predictor</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js"></script>
+
+</head>
+<body>
+
+  <!-- Header -->
+  <div class="header">
+    <div class="badge">● AI-POWERED · STUDENT EDITION</div>
+    <h1>Predict Your Academic Future</h1>
+    <p>Fill in your profile and our models will forecast your exam score and best career paths.</p>
+  </div>
+
+  <!-- Form Card -->
+  <div class="card">
+
+    <div class="section-label">Personal Info</div>
+    <div class="grid-3">
+
+      <div class="field">
+        <label>Age</label>
+        <input type="number" id="age" placeholder="e.g. 20" min="16" max="30" />
+      </div>
+
+      <div class="field">
+        <label>Gender</label>
+        <select id="gender">
+          <option value="">Select</option>
+          <option value="Male">Male</option>
+          <option value="Female">Female</option>
+          <option value="Other">Other</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label>Course</label>
+        <select id="course">
+          <option value="">Select</option>
+          <option value="BBA">BBA</option>
+          <option value="BCA">BCA</option>
+          <option value="BCom">BCom</option>
+          <option value="BSc">BSc</option>
+          <option value="BTech">BTech</option>
+          <option value="BA">BA</option>
+        </select>
+      </div>
+
+    </div>
+
+    <hr class="divider" />
+
+    <div class="section-label">Academic Habits</div>
+    <div class="grid-2">
+
+      <div class="field">
+        <label>Previous Semester GPA</label>
+        <div class="slider-row">
+          <input type="range" id="gpa" min="0" max="10" step="0.1" value="7"
+            oninput="document.getElementById('gpa-val').textContent = parseFloat(this.value).toFixed(1) + ' / 10'" />
+          <span class="slider-value" id="gpa-val">7.0 / 10</span>
+        </div>
+      </div>
+
+      <div class="field">
+        <label>Study Hours / Day</label>
+        <div class="slider-row">
+          <input type="range" id="study_hours" min="0" max="12" step="0.5" value="3"
+            oninput="document.getElementById('study-val').textContent = parseFloat(this.value).toFixed(1) + ' hrs'" />
+          <span class="slider-value" id="study-val">3.0 hrs</span>
+        </div>
+      </div>
+
+      <div class="field">
+        <label>Attendance (%)</label>
+        <div class="slider-row">
+          <input type="range" id="attendance" min="40" max="100" step="1" value="80"
+            oninput="document.getElementById('attend-val').textContent = this.value + '%'" />
+          <span class="slider-value" id="attend-val">80%</span>
+        </div>
+      </div>
+
+      <div class="field">
+        <label>Sleep Hours / Day</label>
+        <div class="slider-row">
+          <input type="range" id="sleep_hours" min="3" max="12" step="0.5" value="7"
+            oninput="document.getElementById('sleep-val').textContent = parseFloat(this.value).toFixed(1) + ' hrs'" />
+          <span class="slider-value" id="sleep-val">7.0 hrs</span>
+        </div>
+      </div>
+
+      <div class="field">
+        <label>Social Media Hours / Day</label>
+        <div class="slider-row">
+          <input type="range" id="social_media" min="0" max="10" step="0.5" value="2"
+            oninput="document.getElementById('social-val').textContent = parseFloat(this.value).toFixed(1) + ' hrs'" />
+          <span class="slider-value" id="social-val">2.0 hrs</span>
+        </div>
+      </div>
+
+    </div>
+
+    <hr class="divider" />
+
+    <div class="section-label">Other Details</div>
+    <div class="grid-3">
+
+      <div class="field">
+        <label>Assignment Completion</label>
+        <select id="assignment">
+          <option value="">Select</option>
+          <option value="poor">Poor</option>
+          <option value="average">Average</option>
+          <option value="good">Good</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label>Study Medium</label>
+        <select id="study_medium">
+          <option value="">Select</option>
+          <option value="self-study">Self-study</option>
+          <option value="online">Online</option>
+          <option value="coaching">Coaching</option>
+          <option value="classroom">Classroom</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label>Exam Difficulty</label>
+        <select id="exam_difficulty">
+          <option value="">Select</option>
+          <option value="easy">Easy</option>
+          <option value="moderate">Moderate</option>
+          <option value="hard">Hard</option>
+        </select>
+      </div>
+
+    </div>
+
+    <hr class="divider" />
+
+  <div class="section-label">Skills Assessment</div>
+  <p style="font-size: 13px; color: #7a83a0; margin-bottom: 16px;">Tap to rate each skill honestly.</p>
+
+  <div class="skill-grid">
+
+    <div class="skill-col">
+      <div class="skill-col-label">🧠 Analytical</div>
+      <button class="skill-pill" onclick="selectSkill('analytical', 'poor',   this)">Poor</button>
+      <button class="skill-pill" onclick="selectSkill('analytical', 'average', this)">Average</button>
+      <button class="skill-pill" onclick="selectSkill('analytical', 'good',    this)">Good</button>
+      <button class="skill-pill" onclick="selectSkill('analytical', 'outstanding', this)">Outstanding</button>
+      <input type="hidden" id="analytical_skill" value="" />
+    </div>
+
+    <div class="skill-col">
+      <div class="skill-col-label">💬 Communication</div>
+      <button class="skill-pill" onclick="selectSkill('communication', 'poor',   this)">Poor</button>
+      <button class="skill-pill" onclick="selectSkill('communication', 'average', this)">Average</button>
+      <button class="skill-pill" onclick="selectSkill('communication', 'good',    this)">Good</button>
+      <button class="skill-pill" onclick="selectSkill('communication', 'outstanding', this)">Outstanding</button>
+      <input type="hidden" id="communication_skill" value="" />
+    </div>
+
+    <div class="skill-col">
+      <div class="skill-col-label">⚙️ Technical</div>
+      <button class="skill-pill" onclick="selectSkill('technical', 'poor',   this)">Poor</button>
+      <button class="skill-pill" onclick="selectSkill('technical', 'average', this)">Average</button>
+      <button class="skill-pill" onclick="selectSkill('technical', 'good',    this)">Good</button>
+      <button class="skill-pill" onclick="selectSkill('technical', 'outstanding', this)">Outstanding</button>
+      <input type="hidden" id="technical_skill" value="" />
+    </div>
+
+    <div class="skill-col">
+      <div class="skill-col-label">🎯 Leadership</div>
+      <button class="skill-pill" onclick="selectSkill('leadership', 'poor',   this)">Poor</button>
+      <button class="skill-pill" onclick="selectSkill('leadership', 'average', this)">Average</button>
+      <button class="skill-pill" onclick="selectSkill('leadership', 'good',    this)">Good</button>
+      <button class="skill-pill" onclick="selectSkill('leadership', 'outstanding', this)">Outstanding</button>
+      <input type="hidden" id="leadership_skill" value="" />
+    </div>
+
+    <div class="skill-col">
+      <div class="skill-col-label">✨ Creativity</div>
+      <button class="skill-pill" onclick="selectSkill('creativity', 'poor',   this)">Poor</button>
+      <button class="skill-pill" onclick="selectSkill('creativity', 'average', this)">Average</button>
+      <button class="skill-pill" onclick="selectSkill('creativity', 'good',    this)">Good</button>
+      <button class="skill-pill" onclick="selectSkill('creativity', 'outstanding', this)">Outstanding</button>
+      <input type="hidden" id="creativity_skill" value="" />
+    </div>
+
+  </div>
+
+    <button class="submit-btn" onclick="submitForm()">Run Prediction →</button>
+
+  </div>
+
+  <!-- Result Card -->
+  <div class="result-card" id="result-card">
+    <h2>Prediction Results</h2>
+    <div class="waiting-text">⏳ Waiting for model response...</div>
+  </div>
+
+</body>
+</html>
